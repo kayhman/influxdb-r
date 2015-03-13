@@ -41,7 +41,7 @@ influxdb_query <- function(host, port, username, password, database, query,
   }
   
   response_data <- fromJSON(rawToChar(response$content))
-  
+  cat(response_data) 
   # response_data at this point is a hot mess of nested lists; turn it into
   # something nicer to work with. I'm sure there is a faster/better way to
   # do this.
