@@ -21,8 +21,9 @@ influxdb_query <- function(host, port, username, password, database, query,
                         time_precision=c("s", "m", "u")) {
   response <- GET(
     "", scheme = "http", hostname = host, port = port,
-    path = sprintf("db/%s/series", URLencode(database)),
+    path = "query",
     query = list(
+      db = database,
       u = username,
       p = password,
       q = query,
